@@ -15,8 +15,8 @@ previousLogFile=backups_$getLastDate.log
 
 ######################################################################
 #Parsing and copying folders and files to back up folder
-mkdir $HOME/backup_"$getDate"   #to creat the backup folder with dates
-backupFolder=$HOME/backup_"$getDate"
+mkdir $HOME/backup_$getDate   #to creat the backup folder with dates
+backupFolder=$HOME/backup_$getDate
 zenity --question --title="Weekly Backup" --width=300 --timeout=10 --text="Your scheduled weekly backup will occur at 6PM, would you like to postpone?"
 if [ $? = 1 ]; then
 cp -R $HOME/Music "$backupFolder" #to copy the music directory into the backup directory
